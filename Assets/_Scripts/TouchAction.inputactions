@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "TouchPress",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "c176838b-3cfd-41e6-bf32-f70c53e8bb7d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

@@ -38,5 +38,6 @@ public class GamePlayState : State
         base.Tick();
         Debug.Log("Checking for Win Condition");
         Debug.Log("Checking for Lose Condition");
+
     }
 }

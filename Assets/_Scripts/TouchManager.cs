@@ -10,6 +10,12 @@ public class TouchManager : MonoBehaviour
 
     private InputAction touchPositionAction;
     private InputAction touchPressAction;
+    public float jumpForce;
+
+    [SerializeField]
+    bool isGrounded = false;
+
+    Rigidbody2D RB;
 
     private void Awake()
     {
@@ -30,8 +36,17 @@ public class TouchManager : MonoBehaviour
     }
     private void TouchPressed(InputAction.CallbackContext context)
     {
-        Vector3 position = Camera.main.ScreenToWorldPoint(touchPositionAction.ReadValue<Vector2>());
-        position.z = player.transform.position.z;
-        player.transform.position = position;
+            RB.AddForce(Vector2.up * jumpForce);
+            isGrounded = false;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            if (isGrounded == false)
+            {
+                isGrounded = true;
+            }
+        }
     }
 }
